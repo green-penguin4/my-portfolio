@@ -33,8 +33,7 @@ h1 {
 }
 
 p,
-li,
-h4 {
+li {
   color: #00263b;
   font-size: 18px;
   line-height: 35px;
@@ -54,11 +53,12 @@ h4 {
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 h1 {
   color: #fce8e1;
+  margin-left: 10px;
 }
 
 #h2-title {
@@ -71,20 +71,20 @@ h1 {
 h2 {
   display: inline-block;
   padding: 0px 20px;
-  font-size: 50px;
+  font-size: 40px;
   color: #fce8e1;
   border-bottom: 3px solid #fce8e1;
 }
 
 h3 {
   display: inline-block;
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 5px;
   color: #fce8e1;
-  margin: 0 5% -72px 5%;
+  margin: 0 5% -57px 5%;
   position: relative;
   overflow: hidden;
-  padding: 5px 20px 5px 125px;
+  padding: 5px 20px 5px 120px;
   word-break: break-all;
   border-top: 3px solid rgb(18, 65, 114);
   border-radius: 20px 0px 0px 0px;
@@ -94,7 +94,7 @@ h3 {
 
 h3 span {
   -webkit-text-stroke: #fce8e1;
-  font-size: 35px;
+  font-size: 30px;
   position: absolute;
   top: 0;
   left: 0;
@@ -111,6 +111,7 @@ h4 {
   padding: 5px 50px 5px 0px;
   margin-bottom: 10px;
   display: inline-block;
+  color: #00263b;
 }
 
 body {
@@ -168,10 +169,10 @@ header {
   font-weight: bold;
 }
 #quiz-text {
-  font-size: 25px;
+  font-size: 22px;
 }
 
-.quiz-area {
+#quiz-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,16 +187,14 @@ header {
 #top-visual ul {
   position: relative;
   width: 100%;
-  top: 130px;
   display: flex;
+  align-items: center;
   justify-content: center;
   vertical-align: middle;
 }
 
 #top-visual li {
-  width: 30%;
   text-align: center;
-  margin-left: 10px;
 }
 
 #top-visual li:first-child {
@@ -281,10 +280,6 @@ section {
   align-items: flex-end;
 }
 
-.garally {
-  align-items: flex-start;
-}
-
 .garally .section-sentences {
   margin-left: 10%;
   width: 90%;
@@ -292,7 +287,6 @@ section {
 
 .section-image {
   width: 100%;
-  padding-right: 10%;
 }
 
 .section-sentences {
@@ -310,28 +304,26 @@ section {
   /* border-bottom: solid 3px rgb(18, 65, 114);
   border-right: solid 3px rgb(18, 65, 114); */
   position: relative;
-  top: -90px;
+  top: -50px;
 }
 
 .section-image img {
-  width: 100%;
   border-radius: 20px;
-  height: 650px;
+  width: 100%;
   object-fit: cover;
   object-position: top;
   filter: saturate(1.8) opacity(0.7);
 }
 #section-slide {
-  height: 650px;
-  width: 90%;
   display: flex;
   overflow: hidden;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 #slide-imgs {
   display: flex;
-  height: fit-content;
+
   animation: loop-slide 30s infinite linear 1s both;
 }
 
@@ -343,41 +335,9 @@ section {
     transform: translateX(-100%);
   }
 }
-#slide-imgs li {
-  width: 650px;
-  height: 650px;
-}
 
 #slide-imgs li img {
-  width: 100%;
-  object-fit: cover;
-}
-
-#slide-imgs figure {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  position: relative;
-  align-items: center;
-}
-
-#slide-imgs figcaption {
-  color: #fce8e1;
-  font-size: 30px;
-  font-weight: bold;
-  display: inline-block;
-  text-align: center;
-  width: 300px;
-  padding: 135px 0;
-  border-radius: 150px;
-  position: absolute;
-  background-color: #00263b65;
-  top: 175px;
-  visibility: hidden;
-}
-
-#slide-imgs li:hover figcaption {
-  visibility: visible;
+  height: 100%;
 }
 
 footer {
@@ -411,4 +371,55 @@ footer p {
   color: #00263b;
 }
 
-/* sp-css */
+/* pc */
+
+@media screen and (min-width: 801px) {
+  #top-visual ul {
+    flex-direction: row;
+    top: 130px;
+  }
+
+  #top-visual li {
+    width: 30%;
+    margin: 0 0 0 10px;
+  }
+  .section-image {
+    padding-right: 10%;
+  }
+  .section-image img {
+    height: 600px;
+  }
+  #section-slide {
+    width: 90%;
+  }
+  #slide-imgs li {
+    height: 600px;
+  }
+}
+
+/* sp */
+
+@media screen and (max-width: 800px) {
+  #top-visual ul {
+    flex-direction: column;
+    top: 20px;
+  }
+
+  #top-visual li {
+    width: 80%;
+    margin: 10px 0 0 0;
+  }
+  .section-image {
+    padding-right: 0;
+  }
+  .section-image img {
+    height: 350px;
+  }
+  #section-slide {
+    height: 350px;
+    width: 100%;
+  }
+  #slide-imgs li {
+    height: 350px;
+  }
+}
